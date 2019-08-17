@@ -110,14 +110,12 @@ void Left_car(uint16_t speed)
 	}
 }
 
-
 void Pause(void)
 {
 	TIM_SetCompare1(TIM3,0);
 	TIM_SetCompare2(TIM2,0);
-	R=0;
+	R=1;
 	L=0;
-	
 }
 
 //设置速度档位
