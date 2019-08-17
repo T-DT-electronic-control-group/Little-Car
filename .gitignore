@@ -2,6 +2,8 @@
 OBJ
 !*.c
 !*.h
+!*.s
 Listings
 Objects
 Car*
+*

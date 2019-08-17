@@ -6,6 +6,7 @@
 #include "sys.h"
 #include "delay.h"
 #include "usart.h"
+#include "road.h"
 
 void All_Init(void);
 
