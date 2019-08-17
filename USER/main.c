@@ -18,19 +18,19 @@ int main(void)
 		switch(value)
 		{
 			case key_UP:
-				Forward_car(speed);
+				Forward_car(500);
 			  break;
 			case key_DOWN:
-				Backward_car(speed);
+				Backward_car(500);
 			  break;
 			case key_OK:
 				Pause();
 			  break;
 			case key_RIGHT:
-				Right_car(speed);
+				Right_car(500);
 			  break;
 			case key_LEFT:
-				Left_car(speed);
+				Left_car(500);
 			  break;
 		}
 	}
