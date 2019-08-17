@@ -42,14 +42,14 @@ void Road_Mode(void)
 				TIM_SetCompare1(TIM3,250);
 		    TIM_SetCompare2(TIM2,Speed0);
 		    R=0;
-		    L=0;
-			}
+				L=0;
+		  }
 		}
 		else if(Left==0&&Right==1&&Middle==0)
 		{
 			while(Middle==0)
 			{
-				TIM_SetCompare1(TIM3,Speed0);
+				TIM_SetCompare1(TIM3,0);
 		    TIM_SetCompare2(TIM2,250);
 		    R=0;
 		    L=0;
