@@ -12,10 +12,10 @@
 
 //#define LED PCout(13)
 
-#define Speed0 0
-#define Speed1 450
-#define Speed2 500
-#define Speed3 600
+#define Speed0 ((uint16_t)0)
+#define Speed1 ((uint16_t)400)
+#define Speed2 ((uint16_t)500)
+#define Speed3 ((uint16_t)600)
 
 enum Direction
 {

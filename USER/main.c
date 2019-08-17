@@ -23,14 +23,18 @@ int main(void)
 			case key_DOWN:
 				Backward_car(speed);
 			  break;
-			case key_OK:
-				Pause();
-			  break;
 			case key_RIGHT:
 				Right_car(speed);
 			  break;
 			case key_LEFT:
 				Left_car(speed);
+			  break;
+			case key_0:
+				Road_Mode();
+			  LED=1;
+			  break;
+			case key_OK:
+				Pause();
 			  break;
 		}
 	}
