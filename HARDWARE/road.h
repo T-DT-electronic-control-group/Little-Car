@@ -3,15 +3,17 @@
 #include "sys.h"
 #include "motor.h"
 #include "speed.h"
+#include "remote.h"
+#include "delay.h"
 
-#define R2 PBin(5)
-#define R1 PBin(4)
-#define L1 PBin(3)
-#define L2 PAin(15)
+#define Left PBin(5)
+#define Middle PBin(4)
+#define Right PBin(3)
+
+#define LED PCout(13)
 
 void Road_Init(void);
-
-
+void Road_Mode(void);
 
 
 #endif
