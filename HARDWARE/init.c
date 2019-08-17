@@ -9,6 +9,7 @@ void All_Init(void)
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
   delay_init();
 	uart_init(115200);
+	Road_Init();
 }
 
 
