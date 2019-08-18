@@ -20,6 +20,8 @@ enum MODE
 	Mode3
 };
 
+typedef enum MODE ROAD_Mode;
+
 void Road_Init(void);
 void Road_Mode(void);
 

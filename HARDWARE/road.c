@@ -24,7 +24,7 @@ void Road_Init(void)
 void Road_Mode(void)
 {
 	u8 value=0;
-	enum MODE mode;
+	ROAD_Mode mode;
 	int status=10;
 	LED_ON;
 	while(1)
