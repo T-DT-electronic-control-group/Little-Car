@@ -30,7 +30,7 @@ int main(void)
 			  break;
 			case key_0:
 				Road_Mode();
-			  LED=1;
+			  LED_OFF;
 			  break;
 			case key_OK:
 				Pause();
