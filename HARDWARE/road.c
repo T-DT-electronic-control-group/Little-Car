@@ -30,15 +30,17 @@ void Road_Mode(void)
 		value = Remote_Scan();
 		if(Left==0&&Right==0&&Middle==1)
 		{
+			Pause();
 			TIM_SetCompare1(TIM3,300);
 	    TIM_SetCompare2(TIM2,300);
-	    R=0;
+			R=0;
 	    L=0;
 		}
 		else if(Left==1&&Right==0&&Middle==0)
 		{
 			while(Middle==0)
 			{
+				Pause();
 				TIM_SetCompare1(TIM3,250);
 		    TIM_SetCompare2(TIM2,Speed0);
 		    R=0;
@@ -49,6 +51,7 @@ void Road_Mode(void)
 		{
 			while(Middle==0)
 			{
+				Pause();
 				TIM_SetCompare1(TIM3,0);
 		    TIM_SetCompare2(TIM2,250);
 		    R=0;
