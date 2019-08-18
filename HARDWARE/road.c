@@ -17,50 +17,62 @@ void Road_Init(void)
 	
 	GPIO_Init(GPIOC, &gpio);
 	
-	GPIO_SetBits(GPIOC, GPIO_Pin_13);
+	LED_OFF;
 	GPIO_SetBits(GPIOB, GPIO_Pin_3|GPIO_Pin_4|GPIO_Pin_5);
 }
 
 void Road_Mode(void)
 {
 	u8 value=0;
-	LED = 0;
+	enum MODE mode;
+	int status=10;
+	LED_ON;
 	while(1)
 	{
 		value = Remote_Scan();
 		if(Left==0&&Right==0&&Middle==1)
 		{
-			Pause();
-			TIM_SetCompare1(TIM3,300);
-	    TIM_SetCompare2(TIM2,300);
+			mode = Mode1;
+			
+			if(status!=mode)
+				Pause();
+			TIM_SetCompare1(TIM3,250);
+	    TIM_SetCompare2(TIM2,250);
 			R=0;
 	    L=0;
+			status = mode;
 		}
 		else if(Left==1&&Right==0&&Middle==0)
 		{
 			while(Middle==0)
 			{
-				Pause();
-				TIM_SetCompare1(TIM3,250);
-		    TIM_SetCompare2(TIM2,Speed0);
+				mode = Mode2;
+				if(status!=mode)
+					Pause();
+				TIM_SetCompare1(TIM3,200);
+		    TIM_SetCompare2(TIM2,100);
 		    R=0;
 				L=0;
+				status = mode;
 		  }
 		}
 		else if(Left==0&&Right==1&&Middle==0)
 		{
 			while(Middle==0)
 			{
-				Pause();
-				TIM_SetCompare1(TIM3,0);
-		    TIM_SetCompare2(TIM2,250);
+				mode = Mode3;
+				if(status!=mode)
+					Pause();
+				TIM_SetCompare1(TIM3,100);
+		    TIM_SetCompare2(TIM2,200);
 		    R=0;
 		    L=0;
+				status = mode;
 			}
 		}
 		if(value==key_OK)
 		{
-			LED = 1;
+			LED_OFF;
 			break;
 		}
 	}

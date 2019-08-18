@@ -10,7 +10,15 @@
 #define Middle PBin(4)
 #define Right PBin(3)
 
-#define LED PCout(13)
+#define LED_ON GPIO_ResetBits(GPIOC, GPIO_Pin_13)
+#define LED_OFF GPIO_SetBits(GPIOC, GPIO_Pin_13)
+
+enum MODE
+{
+	Mode1,
+	Mode2,
+	Mode3
+};
 
 void Road_Init(void);
 void Road_Mode(void);
