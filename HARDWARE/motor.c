@@ -38,8 +38,7 @@ void Forward_car(uint16_t Speed)
 	L=0;
 	direction=Forward;
 	delay_us(25);
-	TIM_SetCompare1(TIM3,Speed0);
-	TIM_SetCompare2(TIM2,Speed0);
+	Pause();
 	
 }
 
@@ -51,10 +50,7 @@ void Backward_car(uint16_t Speed)
 	L=1;
 	direction=Backward;
 	delay_us(25);
-	TIM_SetCompare1(TIM3,Speed0);
-	TIM_SetCompare2(TIM2,Speed0);
-	R=0;
-	L=0;
+	Pause();
 	
 }
 
@@ -67,8 +63,7 @@ void Right_car(uint16_t speed)
 		R=0;
 		L=0;
 		delay_us(25);
-		TIM_SetCompare1(TIM3,Speed0);
-		TIM_SetCompare2(TIM2,Speed0);
+		Pause();
 	}
 	else
 	{
@@ -77,10 +72,7 @@ void Right_car(uint16_t speed)
 		R=0;
 		L=1;
 		delay_us(25);
-		TIM_SetCompare1(TIM3,Speed0);
-		TIM_SetCompare2(TIM2,Speed0);
-		R=0;
-		L=0;
+		Pause();
 	}
 }
 
@@ -93,8 +85,7 @@ void Left_car(uint16_t speed)
 		R=0;
 		L=0;
 		delay_us(25);
-		TIM_SetCompare1(TIM3,Speed0);
-		TIM_SetCompare2(TIM2,Speed0);
+		Pause();
 	}
 	else
 	{
@@ -103,10 +94,7 @@ void Left_car(uint16_t speed)
 		R=1;
 		L=0;
 		delay_us(25);
-		TIM_SetCompare1(TIM3,Speed0);
-		TIM_SetCompare2(TIM2,Speed0);
-		R=0;
-		
+		Pause();
 	}
 }
 
