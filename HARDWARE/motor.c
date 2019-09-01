@@ -8,6 +8,7 @@
 enum Direction direction;
 
 //初始化L298n使能端
+
 void L298n_Init(void)
 {
 	GPIO_InitTypeDef gpio;
@@ -107,19 +108,20 @@ void Pause(void)
 }
 
 //设置速度档位
+
 uint16_t Select_Speed(u8 value)
 {
 	uint16_t s;
 	switch(value)
 	{
 		case key_1:
-			s=Speed1;
+			s=((uint16_t)400);
 		  break;
 		case key_2:
-			s=Speed2;
+			s=((uint16_t)500);
 		  break;
 		case key_3:
-			s=Speed3;
+			s=((uint16_t)600);
 		  break;
 		default:
 			break;
