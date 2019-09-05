@@ -36,8 +36,8 @@ void Road_Mode(void)
 			
 			if(status!=mode)
 				Pause();
-			TIM_SetCompare1(TIM3,250);
-	    TIM_SetCompare2(TIM2,250);
+			Right_Value_250;
+			Left_Value_250;
 			R=0;
 	    L=0;
 			status = mode;
@@ -49,8 +49,8 @@ void Road_Mode(void)
 				mode = Mode2;
 				if(status!=mode)
 					Pause();
-				TIM_SetCompare1(TIM3,200);
-		    TIM_SetCompare2(TIM2,100);
+				Right_Value_200;
+				Left_Value_100;
 		    R=0;
 				L=0;
 				status = mode;
@@ -63,8 +63,8 @@ void Road_Mode(void)
 				mode = Mode3;
 				if(status!=mode)
 					Pause();
-				TIM_SetCompare1(TIM3,100);
-		    TIM_SetCompare2(TIM2,200);
+				Right_Value_100;
+				Left_Value_200;
 		    R=0;
 		    L=0;
 				status = mode;
