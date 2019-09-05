@@ -1,5 +1,5 @@
 # Little-Car
-###详见Little-Car/USER/explain.txt
+详见Little-Car/USER/explain.txt
 ****
 > ## **部件**
   1. L298n电驱模块
