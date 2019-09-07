@@ -3,6 +3,7 @@ OBJ
 !*.c
 !*.h
 !*.s
+!*.ino
 Listings
 Objects
 Car*
