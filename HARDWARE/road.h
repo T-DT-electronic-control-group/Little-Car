@@ -13,14 +13,16 @@
 #define LED_ON GPIO_ResetBits(GPIOC, GPIO_Pin_13)
 #define LED_OFF GPIO_SetBits(GPIOC, GPIO_Pin_13)
 
+#define BLACK 1
+#define WRITE 0
 
-typedef enum MODE
-{
-	Mode1,
-	Mode2,
-	Mode3
-}
-ROAD_Mode;
+//typedef enum MODE
+//{
+//	Mode1,
+//	Mode2,
+//	Mode3
+//}
+//ROAD_Mode;
 
 void Road_Init(void);
 void Road_Mode(void);
