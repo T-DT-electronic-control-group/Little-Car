@@ -1,9 +1,11 @@
 .idea
 OBJ
+*
 !*.c
 !*.h
 !*.s
+!*ino
+!ArduinoPart
 Listings
 Objects
 Car*
-*
