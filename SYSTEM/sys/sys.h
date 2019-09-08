@@ -53,6 +53,9 @@
 #define PGout(n)   BIT_ADDR(GPIOG_ODR_Addr,n)  //输出 
 #define PGin(n)    BIT_ADDR(GPIOG_IDR_Addr,n)  //输入
 
+#define LOW 0
+#define HIGH 1
+
 //以下为汇编函数
 void WFI_SET(void);		//执行WFI指令
 void INTX_DISABLE(void);//关闭所有中断

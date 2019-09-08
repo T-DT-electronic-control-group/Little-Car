@@ -4,8 +4,10 @@ OBJ
 !*.c
 !*.h
 !*.s
+<<<<<<< HEAD
 !*ino
 !ArduinoPart
+>>>>>>> 965f1f0ba81e332642f9c0a28ff6d28e8e4650e8
 Listings
 Objects
 Car*

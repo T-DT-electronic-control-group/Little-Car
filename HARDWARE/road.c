@@ -17,49 +17,55 @@ void Road_Init(void)
 	
 	GPIO_Init(GPIOC, &gpio);
 	
-	GPIO_SetBits(GPIOC, GPIO_Pin_13);
+	LED_OFF;
 	GPIO_SetBits(GPIOB, GPIO_Pin_3|GPIO_Pin_4|GPIO_Pin_5);
 }
+
 
 void Road_Mode(void)
 {
 	u8 value=0;
-	LED = 0;
+//	ROAD_Mode mode;
+//	int status=10;
+	LED_ON;
+	
+	R=LOW;
+	L=LOW;
+	
 	while(1)
 	{
 		value = Remote_Scan();
-		if(Left==0&&Right==0&&Middle==1)
+	
+		if(Left==WRITE&&Middle==BLACK&&Right==WRITE)
 		{
-			TIM_SetCompare1(TIM3,300);
-	    TIM_SetCompare2(TIM2,300);
-	    R=0;
-	    L=0;
+			Right_Value_250;
+			Left_Value_250;
 		}
-		else if(Left==1&&Right==0&&Middle==0)
+		
+		else if(Left==BLACK&&Middle==WRITE&&Right==WRITE)
 		{
-			while(Middle==0)
-			{
-				TIM_SetCompare1(TIM3,250);
-		    TIM_SetCompare2(TIM2,Speed0);
-		    R=0;
-		    L=0;
-			}
+			Right_Value_200;
+			Left_Value_100;
 		}
-		else if(Left==0&&Right==1&&Middle==0)
+		
+		else if(Left==WRITE&&Middle==WRITE&&Right==BLACK)
 		{
-			while(Middle==0)
-			{
-				TIM_SetCompare1(TIM3,Speed0);
-		    TIM_SetCompare2(TIM2,250);
-		    R=0;
-		    L=0;
-			}
+			Right_Value_100;
+			Left_Value_200;
 		}
+		
+		else if(Left==WRITE&&Middle==WRITE&&Right==WRITE)
+			Pause();
+		
+		else if(Left==BLACK&&Middle==BLACK&&Right==BLACK)
+			Pause();
+		
 		if(value==key_OK)
 		{
-			LED = 1;
+			LED_OFF;
 			break;
 		}
+		delay_us(10);
 	}
 }
 

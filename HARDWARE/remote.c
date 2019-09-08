@@ -110,7 +110,7 @@ void TIM4_IRQHandler(void)
 u8 Remote_Scan(void)
 {        
 	u8 sta=0;       
-    u8 t1,t2;  
+  u8 t1,t2;  
 	if(RmtSta&(1<<6))                   //得到一个按键的所有信息了
 	{ 
 	    t1=RmtRec>>24;			            //得到地址码
