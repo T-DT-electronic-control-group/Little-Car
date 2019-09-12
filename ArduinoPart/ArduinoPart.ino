@@ -1,9 +1,10 @@
+
 typedef unsigned int DATA;
 
 int state=HIGH;
 DATA send_data=15;
 DATA rx_data;
-int message;
+
 
 void setup() 
 {
@@ -14,7 +15,8 @@ void setup()
 
 void loop() 
 {
-  
+  #if 0
+  Serial.print(15);
   if(Serial.available()>0)
   {
     rx_data=Serial.read();
@@ -26,9 +28,16 @@ void loop()
       digitalWrite(13,state);
       Serial.println("success");
     }
-    //message=Serial.write("I have recived your message");
     delay(10);
   }
-  //Serial.write(send_data);
+  #endif
+
+  digitalWrite(13,HIGH);
+  delay(100);
+  Serial.print("abcd\r\n");
+  Serial.write("abcd\r\n");
+  digitalWrite(13,LOW);
+  delay(100);
+  
   
 }
